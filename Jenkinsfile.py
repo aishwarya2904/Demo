@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker { image 'php' } }
+    agent any
     stages {
-        stage('build') {
+        stage('Example') {
             steps {
-                sh 'php --version'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
     }
